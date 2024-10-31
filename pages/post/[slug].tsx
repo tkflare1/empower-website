@@ -67,24 +67,22 @@ function Post({ post }: Props) {
         </div>
 
         <div className="mt-10">
-          <PortableText
-            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+        <PortableText
+            className=""
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
             content={post.body}
             serializers={{
-              image: ({ node }: { node: { asset?: { _ref: string } } }) => (
-                node && node.asset ? (
-                  <img
-                    src={urlFor(node.asset).url() || ""}
-                    alt="Image"
-                    className="object-cover w-full h-auto"
-                  />
-                ) : null
-              ),                       
-              h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className="text-2xl font-bold my-5" {...props} />,
-              h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 className="text-xl font-bold my-5" {...props} />,
-              li: ({ children }: { children: React.ReactNode }) => <li className="ml-4 list-disc">{children}</li>,
-              link: ({ href, children }: { href: string; children: React.ReactNode }) => (
+              h1: (props: any) => (
+                <h1 className="text-2xl font-bold my-5" {...props} />
+              ),
+              h2: (props: any) => (
+                <h1 className="text-xl font-bold my-5" {...props} />
+              ),
+              li: ({ children }: any) => (
+                <li className="ml-4 list-disc">{children}</li>
+              ),
+              link: ({ href, children }: any) => (
                 <a href={href} className="text-blue-500 hover:underline">
                   {children}
                 </a>
