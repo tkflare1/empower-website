@@ -10,7 +10,7 @@ interface Props {
 
 export default function Home({ posts }: Props) {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <Head>
         <title>TKFLARE Blog</title>
         <link rel="icon" href="/favicon.ico" />
