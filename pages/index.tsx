@@ -18,7 +18,7 @@ export default function Home({ posts }: Props) {
           name="description"
           content="Empower is an open-source publishing platform that elevates stories from under-represented communities."
         />
-        <link rel="icon" href="/favicon.ico" />
+
       </Head>
 
       <Header />
